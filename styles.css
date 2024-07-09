@@ -1,12 +1,12 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-VariableFont_slnt_wght.woff2");
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-*:focus-visible {
-  outline: 0.125rem dotted red;
-  outline-offset: 0.125rem;
 }
 
 img,
@@ -17,35 +17,10 @@ picture {
   height: auto;
 }
 
-:root {
-  --ff-red-hat-display: "Red Hat Display", sans-serif;
-
-  --clr-primary-400: hsl(192, 37%, 48%);
-  --clr-primary-600: hsl(268, 34%, 53%);
-
-  --clr-secondary-400: hsl(192, 90%, 77%);
-  --clr-secondary-600: hsl(268, 100%, 86%);
-
-  --clr-neutral-100: hsl(0, 0%, 98%);
-  --clr-neutral-300: hsl(240, 10%, 57%);
-  --clr-neutral-400: hsl(240, 10%, 36%);
-  --clr-neutral-900: hsl(240, 21%, 20%);
-
-  --clr-primary-400-hover: hsl(192, 37%, 58%);
-  --clr-primary-600-hover: hsl(268, 34%, 63%);
-
-  --fw-medium: 500;
-  --fw-black: 900;
-
-  --fs-350: 1rem;
-  --fs-400: 1rem;
-  --fs-800: 2rem;
-  --fs-900: 2.5rem;
-
-  --fs-primary-heading: var(--fs-900);
-  --fs-secondary-heading: var(--fs-800);
-  --fs-primary-body: var(--fs-400);
-  --fs-secondary-body: var(--fs-350);
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-column {
@@ -60,31 +35,33 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Inter", sans-serif;
+  color: rgb(196, 196, 196);
+  background-color: rgb(61, 84, 105);
 }
 
-.header {
-  padding-block: 3rem 3.375rem;
+.main {
+  max-width: 24rem;
+  text-align: center;
+  background-color: #1e2227;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 1rem;
 }
 
-.logo-img {
-  width: 7.5rem;
-  height: 1.75rem;
-}
-
-.btns-wrapper {
+.box-wrapper {
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 0.5rem;
 }
 
-.btn {
-  font-size: var(--fs-secondary-body);
-  font-weight: var(--fw-black);
-  color: var(--clr-neutral-100);
-  border: none;
-  border-radius: 50px;
-  padding: 1.1rem 2.5rem;
+.box {
+  width: 8rem;
+  height: 4rem;
+  background-color: #556581;
+  border-radius: 6px;
 }
 
-.btn-primary {
-  background-color: var(--clr-primary-400);
+.text {
+  margin-top: 1rem;
 }
