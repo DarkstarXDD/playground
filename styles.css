@@ -40,7 +40,7 @@ button {
   --clr-primary-900: hsl(216, 12%, 8%);
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -70,7 +70,7 @@ body {
   border: none;
 }
 
-.radio-button {
+/* .radio-button {
   appearance: none;
   position: relative;
   width: 6rem;
@@ -106,6 +106,49 @@ body {
 }
 
 .radio-button:checked {
+  color: var(--clr-primary-600);
+  background-color: var(--clr-primary-400);
+} */
+
+.radio-button {
+  appearance: none;
+}
+
+.radio-label {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--clr-neutral-200);
+  background-color: var(--clr-primary-600);
+  border-radius: 100vw;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.radio-button:focus-visible + .radio-label {
+  outline: 0.125rem dotted var(--clr-primary-400);
+  outline-offset: 0.125rem;
+}
+
+.radio-label:active {
+  color: var(--clr-primary-600);
+  background-color: var(--clr-neutral-100);
+  scale: 0.95;
+}
+
+@media (hover: hover) {
+  .radio-label:hover {
+    cursor: pointer;
+    color: var(--clr-primary-600);
+    background-color: var(--clr-neutral-100);
+  }
+}
+
+.radio-button:checked + .radio-label {
   color: var(--clr-primary-600);
   background-color: var(--clr-primary-400);
 }
