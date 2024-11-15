@@ -1,0 +1,56 @@
+/* ------------------- CSS Reset ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+*:focus-visible {
+  outline: 0.125rem dotted green;
+  outline-offset: 0.125rem;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+header {
+  text-align: center;
+  background-color: cadetblue;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+}
+
+.hero {
+  background-color: white;
+  color: black;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: black;
+  color: white;
+  padding: 12rem;
+  text-align: center;
+}
+
+footer {
+  background-color: palevioletred;
+  padding: 4rem;
+  text-align: center;
+}
