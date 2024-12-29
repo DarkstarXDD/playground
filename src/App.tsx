@@ -24,7 +24,7 @@ export default function App() {
     <main className="grid w-full max-w-5xl content-start gap-6">
       <div className="flex justify-between">
         <div className="grid gap-2">
-          <label htmlFor="">Rows</label>
+          <label htmlFor={`${id}-rows`}>Rows</label>
           <input
             type="range"
             min={5}
@@ -40,7 +40,7 @@ export default function App() {
         </p>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="">Columns</label>
+          <label htmlFor={`${id}-columns`}>Columns</label>
           <input
             type="range"
             min={5}
