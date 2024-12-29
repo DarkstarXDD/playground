@@ -21,7 +21,7 @@ export default function App() {
   }, [])
 
   return (
-    <main className="grid w-full max-w-5xl content-start gap-6">
+    <main className="mx-auto grid max-w-5xl content-start gap-6">
       <div className="flex justify-between">
         <div className="grid gap-2">
           <label htmlFor={`${id}-rows`}>Rows</label>
