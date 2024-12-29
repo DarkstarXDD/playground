@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title</title>
-    <link rel="stylesheet" href="/src/styles.css" />
-    <script type="module" src="/src/main.js"></script>
 
     <meta name="author" content="Darkstar" />
     <meta
@@ -33,18 +31,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   </head>
 
-  <body>
-    <main>
-      <div class="card">
-        <div class="card-inside">
-          <div>
-            <h2>Work</h2>
-            <button>Click</button>
-          </div>
-
-          <div></div>
-        </div>
-      </div>
-    </main>
+  <body
+    class="bg-slate-900 text-gray-200 font-sans flex min-h-dvh flex-col items-center justify-center"
+  >
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
