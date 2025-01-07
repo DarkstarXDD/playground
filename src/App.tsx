@@ -1,58 +1,48 @@
-import React from "react"
+import { useState } from "react"
+import InputSlider from "./components/InputSlider"
 
-import Grid from "./components/Grid"
+export type PasswordParams = {
+  length: number
+  options: {
+    uppercase: boolean
+    lowercase: boolean
+    numbers: boolean
+    symbols: boolean
+  }
+}
+
+const defaultPasswordParams: PasswordParams = {
+  length: 12,
+  options: {
+    uppercase: true,
+    lowercase: true,
+    numbers: true,
+    symbols: false,
+  },
+}
 
 export default function App() {
-  const id = React.useId()
+  const [passwordParams, setPasswordParams] = useState<PasswordParams>(
+    defaultPasswordParams
+  )
 
-  const [numRows, setNumRows] = React.useState(12)
-  const [numCols, setNumCols] = React.useState(12)
-
-  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 })
-
-  React.useEffect(() => {
-    function handleMouseMove(event: MouseEvent) {
-      setMousePosition({ x: event.clientX, y: event.clientY })
+  function onSliderChange(value: number[]) {
+    const newParams = {
+      ...passwordParams,
+      length: value[0],
     }
-
-    window.addEventListener("mousemove", handleMouseMove)
-
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+    setPasswordParams(newParams)
+  }
 
   return (
-    <main className="mx-auto grid max-w-5xl content-start gap-6">
-      <div className="flex justify-between">
-        <div className="grid gap-2">
-          <label htmlFor={`${id}-rows`}>Rows</label>
-          <input
-            type="range"
-            min={5}
-            max={40}
-            id={`${id}-rows`}
-            value={numRows}
-            onChange={(event) => setNumRows(Number(event.target.value))}
-          />
-        </div>
-
-        <p className="text-2xl">
-          {mousePosition.x}/{mousePosition.y}
-        </p>
-
-        <div className="flex flex-col gap-2">
-          <label htmlFor={`${id}-columns`}>Columns</label>
-          <input
-            type="range"
-            min={5}
-            max={40}
-            id={`${id}-columns`}
-            value={numCols}
-            onChange={(event) => setNumCols(Number(event.target.value))}
-          />
-        </div>
-      </div>
-
-      <Grid numRows={numRows} numCols={numCols} />
+    <main>
+      <InputSlider
+        name="length"
+        min={8}
+        max={32}
+        value={passwordParams.length}
+        onValueChange={onSliderChange}
+      />
     </main>
   )
 }
